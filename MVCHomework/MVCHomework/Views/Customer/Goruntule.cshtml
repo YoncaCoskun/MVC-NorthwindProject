@@ -1,0 +1,37 @@
+﻿@model MVCHomework.Models.MusteriModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Goruntule</title>
+</head>
+<body>
+    <a href="/Customer/AnaSayfa">Ana Sayfa</a>
+    <a href="/Customer/Yeni">Yeni</a>
+
+    <hr />
+    <form action="/Customer/Guncelle" method="POST">
+        @Html.HiddenFor(x => x.MusteriId)
+
+        <table>
+            <tr>
+                <td>Şirket Adı</td>
+                <td>@Html.TextBoxFor(x => x.SirketAdi) </td>
+            </tr>
+            <tr>
+                <td>Bağlantı Adı</td>
+                <td>@Html.TextBoxFor(x => x.BaglantiAdi)</td>
+            </tr>
+            <tr>
+                <td>Şehir</td>
+                <td>@Html.TextBoxFor(x => x.Sehir)</td>
+            </tr>
+
+
+        </table><br />
+        <input type="submit" value="Güncelle" />
+    </form>
+</body>
+</html>

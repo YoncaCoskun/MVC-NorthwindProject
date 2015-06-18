@@ -1,0 +1,28 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Yeni</title>
+</head>
+<body>
+    <a href="/Shipper/AnaSayfa">Ana Sayfa</a>
+    <a href="/Shipper/Yeni">Yeni</a>
+
+    <hr />
+
+
+    @using (Html.BeginForm("Kaydet", "Shipper"))
+    {
+        <div>
+            Şirket Adı: <input type="text" name="sirketAdi" /><br />
+            Telefon : <input type="text" name="telefon" /><br />
+           
+
+            <input type="submit" value="Kaydet" />
+        </div>
+    }
+</body>
+</html>

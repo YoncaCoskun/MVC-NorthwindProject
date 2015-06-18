@@ -1,0 +1,23 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Yeni</title>
+</head>
+<body>
+    <a href="/Category/AnaSayfa">Ana Sayfa</a>
+    <a href="/Category/Yeni">Yeni</a>
+    <hr />
+    @using (Html.BeginForm("Kaydet", "Category")) 
+    {
+        <div>
+            Kategori Adı: <input type="text" name="kategoriAdi" /><br />
+            Açıklama : <input type="text" name="aciklama" /><br />
+
+            <input type="submit" value="Kaydet" />
+        </div>
+    }
+</body>
+</html>

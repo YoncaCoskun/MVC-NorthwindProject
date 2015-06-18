@@ -1,0 +1,42 @@
+﻿@using System.Data
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnaSayfa</title>
+</head>
+<body>
+    <a href="/Employee/AnaSayfa">Ana Sayfa</a>
+    <a href="/Employee/Yeni">Yeni</a>
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Soyad</th>
+            <th>Ad</th>
+            <th>Unvan</th>
+            <th>Şehir</th>
+        </tr>
+
+        @foreach (DataRow row in ViewBag.Calisanlar)
+        {
+            var id = row["EmployeeID"];
+            var soyad = row["LastName"];
+            var ad = row["FirstName"];
+            var unvan = row["Title"];
+            var sehir = row["City"];
+
+            <tr>
+                <td>@id</td>
+                <td>@soyad</td>
+                <td>@ad</td>
+                <td>@unvan</td>
+                <td>@sehir</td>
+                <td>@Html.ActionLink("Görüntüle", "Goruntule", new { id })</td>
+
+            </tr>
+        }
+    </table>
+</body>
+</html>

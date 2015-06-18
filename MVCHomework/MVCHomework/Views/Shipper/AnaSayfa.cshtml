@@ -1,0 +1,34 @@
+﻿@using System.Data
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnaSayfa</title>
+</head>
+<body>
+    <a href="/Shipper/AnaSayfa">Ana Sayfa</a>
+    <a href="/Shipper/Yeni">Yeni</a>
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Şirket Adı</th>
+            <th>Telefon</th>          
+        </tr>
+        @foreach (DataRow row in ViewBag.Nakliyeciler)
+        {
+            var id = row["ShipperID"];
+            var sirketAdi = row["CompanyName"];
+            var telefon= row["Phone"];
+            <tr>
+                <td>@id</td>
+                <td>@sirketAdi</td>
+                <td>@telefon</td>
+                <td>@Html.ActionLink("Görüntüle", "Goruntule", new { id })</td>
+
+            </tr>
+        }
+    </table>
+</body>
+</html>

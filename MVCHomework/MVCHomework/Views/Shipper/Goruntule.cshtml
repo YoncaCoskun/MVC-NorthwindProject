@@ -1,0 +1,31 @@
+﻿@model MVCHomework.Models.NakliyeciModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Goruntule</title>
+</head>
+<body>
+    <a href="/Shipper/AnaSayfa">Ana Sayfa</a>
+    <a href="/Shipper/Yeni">Yeni</a>
+
+    <hr />
+    <form action="/Shipper/Guncelle" method="POST">
+        @Html.HiddenFor(x => x.NakliyeciId)
+
+        <table>
+            <tr>
+                <td>Şirket Adı</td>
+                <td>@Html.TextBoxFor(x => x.SirketAdi) </td>
+            </tr>
+            <tr>
+                <td>Telefon</td>
+                <td>@Html.TextBoxFor(x => x.Telefon)</td>
+            </tr>
+    
+        </table><br />
+        <input type="submit" value="Güncelle" />
+    </form>
+</body>
+</html>

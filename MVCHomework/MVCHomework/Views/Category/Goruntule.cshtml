@@ -1,0 +1,37 @@
+﻿@model MVCHomework.Models.KategoriModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Goruntule</title>
+</head>
+<body>
+    <a href="/Category/AnaSayfa">Ana Sayfa</a>
+    <a href="/Category/Yeni">Yeni</a>
+
+    <hr />
+    <form action="/Category/Guncelle" method="POST">
+        @Html.HiddenFor(x => x.KategoriId)
+
+        <table>
+            <tr>
+                <td>Kategori Adı</td>
+                <td>@Html.TextBoxFor(x => x.KategoriAdi) </td>
+            </tr>
+            <tr>
+                <td>Açıklama</td>
+                <td>@Html.TextBoxFor(x => x.Aciklama)</td>
+            </tr>
+          
+        </table><br />
+        <input type="submit" value="Güncelle" />
+    </form>
+
+
+
+
+
+
+</body>
+</html>

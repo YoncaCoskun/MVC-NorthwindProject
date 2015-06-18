@@ -1,0 +1,37 @@
+﻿@using System.Data
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnaSayfa</title>
+</head>
+<body>
+    <a href="/Category/AnaSayfa">Ana Sayfa</a>
+    <a href="/Category/Yeni">Yeni</a>
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Açıklama</th>
+        </tr>
+
+        @foreach (DataRow row in ViewBag.Kategoriler)
+        {
+            var id = row["CategoryID"];
+            var ad = row["CategoryName"];
+            var aciklama = row["Description"];
+            
+            <tr>
+                <td>@id</td>
+                <td>@ad</td>
+                <td>@aciklama</td>
+                <td>@Html.ActionLink("Görüntüle", "Goruntule", new { id })</td> 
+
+            </tr>
+        }
+    </table>
+
+</body>
+</html>
