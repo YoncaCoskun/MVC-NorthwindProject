@@ -1,0 +1,36 @@
+﻿@using MVC_DbFirstHomework.Models
+@model IEnumerable<BolgeModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Bölge Id</th>
+            <th>Bölge Açıklama</th>
+            <th>@Html.ActionLink("Yeni", "Gor", new {Id = 0, gunMu = false})</th>
+        </tr>
+
+        @foreach (BolgeModel bolge in Model)
+        {
+            using (Html.BeginForm("Sil", "Region", new { Id = bolge.BolgeId}))
+            {
+                                 
+                <tr>
+                    <td>@bolge.BolgeId</td>
+                    <td>@bolge.BolgeAciklama</td>
+                    <td>@Html.ActionLink("Gör", "Gor", new {Id = bolge.BolgeId, gunMu = true})</td>
+                    <td><input type="submit" value="Sil" onclick="return confirm('emin misin?')"/></td>
+                </tr>
+            }
+
+        }
+
+        
+    </table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model MVC_DbFirstHomework.Models.NakliyeciModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+
+    @using (Html.BeginForm("Kaydet","Supplier"))
+    {
+        @Html.HiddenFor(x=>x.NakliyeciId)
+        <table>
+            <tr>
+                <td>Şirket İsmi</td>
+                <td>@Html.TextBoxFor(x => x.SirketAdi)</td>
+            </tr>
+            <tr>
+                <td>İletişim İsmi</td>
+                <td>@Html.TextBoxFor(x => x.IletisimIsmi)</td>
+            </tr>
+            <tr>
+                <td>İletişim Unvanı</td>
+                <td>@Html.TextBoxFor(x => x.IletisimUnvani)</td>
+            </tr>
+            <tr>
+                <td>Adres</td>
+                <td>@Html.TextBoxFor(x => x.Adres)</td>
+            </tr>
+            <tr>
+                <td>Şehir</td>
+                <td>@Html.TextBoxFor(x => x.Sehir)</td>
+            </tr>
+        </table>
+        <input type="submit" value="Kaydet/Güncelle"/>
+    }
+
+</body>
+</html>

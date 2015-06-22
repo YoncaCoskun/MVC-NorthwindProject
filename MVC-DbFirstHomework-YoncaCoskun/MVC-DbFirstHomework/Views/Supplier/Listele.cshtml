@@ -1,0 +1,43 @@
+﻿@using MVC_DbFirstHomework.Models
+@model dynamic
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Nakliyeci Id</th>
+            <th>Şirket Adı</th>
+            <th>Iletişim İsmi</th>
+            <th>Iletişim Unvanı</th>
+            <th>Adres</th>
+            <th>Şehir</th>
+            <th>@Html.ActionLink("Yeni", "Gor", new { Id = 0 })</th>
+
+        </tr>
+
+        @foreach (NakliyeciModel nakliyeci in Model)
+        {
+            using (@Html.BeginForm("Sil", "Supplier", new { Id = nakliyeci.NakliyeciId }))
+            {
+                <tr>
+                    <td>@nakliyeci.NakliyeciId</td>
+                    <td>@nakliyeci.SirketAdi</td>
+                    <td>@nakliyeci.IletisimIsmi</td>
+                    <td>@nakliyeci.IletisimUnvani</td>
+                    <td>@nakliyeci.Adres</td>
+                    <td>@nakliyeci.Sehir</td>
+                    <td>@Html.ActionLink("Gör", "Gor", new { Id = nakliyeci.NakliyeciId })</td>
+                    <td><input type="submit" value="Sil" onclick="return confirm('emin misin?')"/></td>
+                </tr>
+            }
+
+        }
+
+    </table>
+</body>
+</html>

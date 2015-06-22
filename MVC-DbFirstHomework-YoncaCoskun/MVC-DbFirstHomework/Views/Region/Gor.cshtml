@@ -1,0 +1,30 @@
+﻿@model MVC_DbFirstHomework.Models.BolgeModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+
+    @using (Html.BeginForm("Kaydet", "Region"))
+    {
+        
+        @Html.HiddenFor(x=>x.GuncellenecekMi)
+
+        <table>
+            <tr>
+                <td>Bölge Id :</td>
+                <td>@Html.TextBoxFor(x => x.BolgeId)</td>
+            </tr>
+            <tr>
+                <td>Bölge Açıklama :</td>
+                <td>@Html.TextBoxFor(x => x.BolgeAciklama)</td>
+            </tr>
+        </table>
+        <input type="submit" value="Kaydet/Güncelle"/>
+    }
+</body>
+</html>

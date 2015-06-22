@@ -1,0 +1,34 @@
+﻿@model MVC_DbFirstHomework.Models.AraziModel
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+
+    @using (Html.BeginForm("Kaydet", "Territory"))
+    {
+     @Html.HiddenFor(x=>x.GuncellenecekMi)
+        <table>
+            <tr>
+                <td>Arazi Id</td>
+                <td>@Html.TextBoxFor(x => x.AraziId)</td>
+            </tr>
+            <tr>
+                <td>Arazi Açıklama</td>
+                <td>@Html.TextBoxFor(x => x.AraziAciklama)</td>
+            </tr>
+            <tr>
+                <td>Bölge Id</td>
+                <td>@Html.TextBoxFor(x => x.BölgeId)</td>
+            </tr>
+
+        </table>
+        <input type="submit" value="Kaydet/Güncelle" />
+    }
+</body>
+</html>

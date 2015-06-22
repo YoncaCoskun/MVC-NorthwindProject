@@ -1,0 +1,37 @@
+﻿@using MVC_DbFirstHomework.Models
+@model IEnumerable<AraziModel>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Arazi Id</th>
+        <th>Arazi Açıklama</th>
+        <th>Bölge Id</th>
+        <th>@Html.ActionLink("Yeni", "Gor", new {Id="",degistiMi=false})</th>
+        
+    </tr>
+    @foreach (AraziModel arazi in Model)
+    {
+        using (@Html.BeginForm("Sil", "Territory", new { Id = arazi.AraziId}))
+        {
+            
+            <tr>
+                <td>@arazi.AraziId</td>
+                <td>@arazi.AraziAciklama</td>
+                <td>@arazi.BölgeId</td>
+                <td>@Html.ActionLink("Gör", "Gor", new { Id = arazi.AraziId,degistiMi=true})</td>
+                <td><input type="submit" value="Sil" onclick="return confirm('emin misin?')" /></td>
+            </tr>
+        }
+
+    }
+</table>
+</body>
+</html>
